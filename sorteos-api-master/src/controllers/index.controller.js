@@ -217,6 +217,18 @@ const getContratos = async (req, res) => {
 
 }
 
+const generarOTP = async (req, res) => {
+    try {
+        res.status(200)
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({
+            message: 'Error inesperado.'
+        })
+    }
+
+}
+
 module.exports = {
     getRedenciones,
     getRedencionId,
@@ -225,5 +237,6 @@ module.exports = {
     deleteRedencion,
     getSorteoActivo,
     getMaximoBoletas,
-    getContratos
+    getContratos,
+    generarOTP
 };
