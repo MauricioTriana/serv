@@ -219,15 +219,55 @@ const getContratos = async (req, res) => {
 
 const generarOTP = async (req, res) => {
     try {
-        res.status(200)
+        res.status(200).json()
     } catch (error) {
         console.log(error)
         res.status(500).json({
             message: 'Error inesperado.'
         })
     }
-
 }
+
+const validarOtp = async (req, res) => {
+    try {
+        if (req.body.code == 123456) {
+            res.status(200).json()
+        }
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({
+            message: 'Error inesperado.'
+        })
+    }
+}
+
+const generarPagare = async (req, res) => {
+    try {
+        res.status(200).json({
+            "idGirador":"1",
+            "idPagare":"98765",
+            "codigoVerificacion":null,
+            "bytesPagare":null
+        })
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({
+            message: 'Error inesperado.'
+        })
+    }
+}
+
+const validatePagare = async (req, res) => {
+    try {
+        res.status(200).json()
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({
+            message: 'Error inesperado.'
+        })
+    }
+}
+
 
 module.exports = {
     getRedenciones,
@@ -238,5 +278,8 @@ module.exports = {
     getSorteoActivo,
     getMaximoBoletas,
     getContratos,
-    generarOTP
+    generarOTP,
+    validarOtp,
+    generarPagare,
+    validatePagare
 };
