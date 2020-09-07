@@ -177,8 +177,7 @@ const getMaximoBoletas = async (req, res) => {
 
 const getContratos = async (req, res) => {
     try {
-        if (req.body.idContrato == 123456 && req.body.idDistribuidora === "GDO" && req.body.identificacion == "123456"
-            && req.body.numeroTelefono == "1234567") {
+        if (req.body.idContrato == 123456) {
             res.status(200).json({
                 "apellido": "prueba",
                 "cantidadFacturasGeneradas": 1,
