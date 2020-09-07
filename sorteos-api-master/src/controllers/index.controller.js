@@ -267,6 +267,22 @@ const validatePagare = async (req, res) => {
     }
 }
 
+const validaFactura = async (req, res) => {
+    try {
+        if (req.body.idPrimeraFactura == 123456 && req.body.idSegundaFactura == 123456) {
+            res.status(200).json()
+        }else{
+            res.status(500).json()
+        }
+        
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({
+            message: 'Error inesperado.'
+        })
+    }
+}
+
 
 module.exports = {
     getRedenciones,
@@ -280,5 +296,6 @@ module.exports = {
     generarOTP,
     validarOtp,
     generarPagare,
-    validatePagare
+    validatePagare,
+    validaFactura
 };

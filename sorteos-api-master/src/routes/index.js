@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const router = Router();
 
-const { getRedenciones, getRedencionId, createRedencion, updateRedencion, deleteRedencion, getSorteoActivo, getMaximoBoletas, getContratos, generarOTP, validarOtp, generarPagare, validatePagare } = require('../controllers/index.controller');
+const { getRedenciones, getRedencionId, createRedencion, updateRedencion, deleteRedencion, getSorteoActivo, getMaximoBoletas, getContratos, generarOTP, validarOtp, generarPagare, validatePagare, validaFactura } = require('../controllers/index.controller');
 
 router.get('/redenciones', getRedenciones);
 router.get('/redenciones/:id', getRedencionId);
@@ -19,6 +19,7 @@ router.post('/gestion-identidad/v1.0/codigo/generar', generarOTP);
 router.post('/gestion-identidad/v1.0/codigo/validar', validarOtp);
 router.post("/gestion-pagare-desmaterializado/v1.0/pagare/generar",generarPagare);
 router.post("/gestion-pagare-desmaterializado/v1.0/pagare/firmar",validatePagare);
+router.post("/gestion-cliente-gas/v1.0/clientegas/factura",validaFactura);
 
 
 module.exports = router;
