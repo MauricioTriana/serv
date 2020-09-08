@@ -284,6 +284,36 @@ const validaFactura = async (req, res) => {
 }
 
 
+const getCupoCliente = async (req, res) => {
+    try {
+        if (req.body.idContrato == 123456) {
+            res.status(200).json({
+                "codigoSegmentacion": 0,
+                "cupoAsignado": 1000000,
+                "cupoBloqueado": "non",
+                "cupoCedido": 0,
+                "cupoDisponible": 0,
+                "cupoRecibido": 0,
+                "cupoUsado": 0,
+                "politicasIncumplidas": "Nan",
+                "saldoRed": 0,
+                "segmentacion": "auto"
+            })
+        } else {
+            res.status(400).json({
+                message: 'Datos de entrada incorrectos.'
+            })
+        }
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({
+            message: 'Error inesperado.'
+        })
+    }
+
+}
+
+
 module.exports = {
     getRedenciones,
     getRedencionId,
@@ -297,5 +327,6 @@ module.exports = {
     validarOtp,
     generarPagare,
     validatePagare,
-    validaFactura
+    validaFactura,
+    getCupoCliente
 };
