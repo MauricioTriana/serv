@@ -231,6 +231,8 @@ const validarOtp = async (req, res) => {
     try {
         if (req.body.code == 123456) {
             res.status(200).json()
+        }else{
+            res.status(400).json()
         }
     } catch (error) {
         console.log(error)
@@ -258,7 +260,11 @@ const generarPagare = async (req, res) => {
 
 const validatePagare = async (req, res) => {
     try {
-        res.status(200).json()
+        if (req.body.codigoVerificacion == 123456) {
+            res.status(200).json()
+        }else{
+            res.status(400).json()
+        }
     } catch (error) {
         console.log(error)
         res.status(500).json({
