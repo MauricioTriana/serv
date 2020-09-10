@@ -243,10 +243,10 @@ const validarOtp = async (req, res) => {
 const generarPagare = async (req, res) => {
     try {
         res.status(200).json({
-            "idGirador":"1",
-            "idPagare":"98765",
-            "codigoVerificacion":null,
-            "bytesPagare":null
+            "idGirador": "1",
+            "idPagare": "98765",
+            "codigoVerificacion": null,
+            "bytesPagare": null
         })
     } catch (error) {
         console.log(error)
@@ -271,10 +271,10 @@ const validaFactura = async (req, res) => {
     try {
         if (req.body.idPrimeraFactura == 123456 && req.body.idSegundaFactura == 123456) {
             res.status(200).json()
-        }else{
+        } else {
             res.status(500).json()
         }
-        
+
     } catch (error) {
         console.log(error)
         res.status(500).json({
@@ -313,6 +313,73 @@ const getCupoCliente = async (req, res) => {
 
 }
 
+const registroCliente = async (req, res) => {
+    try {
+        res.status(200).json({
+            "aceptaCondicionCredito": true,
+            "aceptaPagare": true,
+            "aceptaPoliticas": true,
+            "aceptaReporteCentrales": true,
+            "aceptaSeguroVida": true,
+            "aceptaTerminosCondiciones": true,
+            "clienteDTO": {
+                "aceptaTratamientoDatos": true,
+                "fechaExpedicionDocumento": "2020-09-10T01:45:02.295Z",
+                "fechaNacimiento": "2020-09-10T01:45:02.295Z",
+                "genero": "string",
+                "lugarExpedicionDocumento": "string",
+                "personaDTO": {
+                    "celular": "string",
+                    "correo": "string",
+                    "nombres": "string",
+                    "numDocumento": "string",
+                    "primerApellido": "string",
+                    "segundoApellido": "string",
+                    "telefono": "string",
+                    "tipoDocumento": "string"
+                },
+                "usuarioDTO": {
+                    "nickName": "string",
+                    "password": "string"
+                }
+            },
+            "codigoOtpDocumentos": "string",
+            "contratoDTO": {
+                "direccionPredio": "string",
+                "idDistribuidora": 0,
+                "numeroContrato": "string"
+            },
+            "cupoAsignado": 0,
+            "cupoDisponible": 0,
+            "cupoUsado": 0,
+            "esTitular": true,
+            "esVigente": "string",
+            "fechaUltimaFactura": "2020-09-10T01:45:02.295Z",
+            "fechaUltimaFacturaSemestre": "2020-09-10T01:45:02.295Z",
+            "modoRegistro": "string",
+            "motivoNoVigente": "string",
+            "numUltimaFactura": "string",
+            "numUltimaFacturaSemestre": "string",
+            "pagareDTO": {
+                "codigoOtp": "string",
+                "estado": "string",
+                "idPagareDceval": "string"
+            },
+            "referenciaClienteDTO": {
+                "apellidoReferencia": "string",
+                "nombreReferencia": "string",
+                "telefonoReferencia": "string"
+            }
+        })
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({
+            message: 'Error inesperado.'
+        })
+    }
+
+}
+
 
 module.exports = {
     getRedenciones,
@@ -328,5 +395,6 @@ module.exports = {
     generarPagare,
     validatePagare,
     validaFactura,
-    getCupoCliente
+    getCupoCliente,
+    registroCliente
 };
