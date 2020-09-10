@@ -289,7 +289,7 @@ const getCupoCliente = async (req, res) => {
         if (req.body.idContrato == 123456) {
             res.status(200).json({
                 "codigoSegmentacion": 0,
-                "cupoAsignado": 1000000,
+                "cupoAsignado": "$10.000.000",
                 "cupoBloqueado": "non",
                 "cupoCedido": 0,
                 "cupoDisponible": 0,
