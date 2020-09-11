@@ -275,7 +275,7 @@ const validatePagare = async (req, res) => {
 
 const validaFactura = async (req, res) => {
     try {
-        if (req.body.idPrimeraFactura == 123456 && req.body.idSegundaFactura == 123456) {
+        if (req.body.idPrimeraFactura == 123456 && req.body.idSegundaFactura == 1234567 ) {
             res.status(200).json()
         } else {
             res.status(500).json()
