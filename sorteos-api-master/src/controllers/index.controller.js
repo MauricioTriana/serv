@@ -292,7 +292,7 @@ const validaFactura = async (req, res) => {
 
 const getCupoCliente = async (req, res) => {
     try {
-        if (req.body.idContrato == 123456) {
+        if (req.body.idContrato == "C-903838" || req.body.idContrato == "123456") {
             res.status(200).json({
                 "codigoSegmentacion": 0,
                 "cupoAsignado": "$10.000.000",
