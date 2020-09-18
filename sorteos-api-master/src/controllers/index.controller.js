@@ -298,7 +298,7 @@ const getCupoCliente = async (req, res) => {
                 "cupoAsignado": "$10.000.000",
                 "cupoBloqueado": "non",
                 "cupoCedido": 0,
-                "cupoDisponible": 0,
+                "cupoDisponible": "$300.000",
                 "cupoRecibido": 0,
                 "cupoUsado": 0,
                 "politicasIncumplidas": "Nan",
