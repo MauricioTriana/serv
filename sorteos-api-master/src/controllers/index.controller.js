@@ -386,6 +386,46 @@ const registroCliente = async (req, res) => {
 
 }
 
+var contratosCliente = [{
+    "contrato": "C-455634",
+    "idPagare": "P-234242",
+    "cupoAsignado": "$200.000",
+    "cupoDisponible": "$200.000",
+    "direccion": "calle 11 # 22",
+    "estado": "Registrado"
+
+},
+{
+    "contrato": "C-903838",
+    "idPagare": "P-234622",
+    "distribuidora": "Gases de occidente",
+    "cupoAsignado": "$200.000",
+    "cupoDisponible": "$800.000",
+    "direccion": "calle 22 # 39",
+    "estado": "No Registrado"
+
+}]
+
+const getContratosCliente = async (req, res) => {
+
+    res.status(200).json({
+        contratosCliente
+    })
+}
+
+const setContratosCliente = async (req, res) => {
+    try {
+        contratosCliente.push(req.body)
+        res.status(200).json({
+            "message":"Exitoso"
+        })
+    } catch (error) {
+        res.status(500).json({
+            "message":"Error"
+        })
+    }
+
+}
 
 module.exports = {
     getRedenciones,
@@ -402,5 +442,7 @@ module.exports = {
     validatePagare,
     validaFactura,
     getCupoCliente,
-    registroCliente
+    registroCliente,
+    getContratosCliente,
+    setContratosCliente
 };
