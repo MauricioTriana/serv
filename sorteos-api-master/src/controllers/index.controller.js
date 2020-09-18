@@ -385,7 +385,6 @@ const registroCliente = async (req, res) => {
     }
 
 }
-
 var contratosCliente = [{
     "contrato": "C-455634",
     "idPagare": "P-234242",
