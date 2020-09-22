@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const router = Router();
 
-const { getRedenciones, getRedencionId, createRedencion, updateRedencion, deleteRedencion, getSorteoActivo, getMaximoBoletas, getContratos, generarOTP, validarOtp, generarPagare, validatePagare, validaFactura, getCupoCliente, registroCliente, getContratosCliente, setContratosCliente } = require('../controllers/index.controller');
+const { getRedenciones, getRedencionId, createRedencion, updateRedencion, deleteRedencion, getSorteoActivo, getMaximoBoletas, getContratos, generarOTP, validarOtp, generarPagare, validatePagare, validaFactura, getCupoCliente, registroCliente, getContratosCliente, setContratosCliente,solicitaCambioContrasena } = require('../controllers/index.controller');
 
 router.get('/redenciones', getRedenciones);
 router.get('/redenciones/:id', getRedencionId);
@@ -24,5 +24,6 @@ router.post("/gestion-cliente-gas/v1.0/clientegas/contrato/cupo",getCupoCliente)
 router.post("/gestion-enrolamiento/v1.0/gestion/enrolamiento",registroCliente);
 router.get("/gestion-enrolamiento/v1.0/gestion/contratos-cliente",getContratosCliente);
 router.post("/gestion-enrolamiento/v1.0/gestion/crear-contratos-cliente",setContratosCliente);
+router.post("/SolicitaCambioContrasena",solicitaCambioContrasena);
 
 module.exports = router;

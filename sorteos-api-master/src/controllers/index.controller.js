@@ -423,7 +423,10 @@ const setContratosCliente = async (req, res) => {
             "message":"Error"
         })
     }
+}
 
+const solicitaCambioContrasena = async (req, res) => {
+    res.status(200).json()
 }
 
 module.exports = {
@@ -443,5 +446,6 @@ module.exports = {
     getCupoCliente,
     registroCliente,
     getContratosCliente,
-    setContratosCliente
+    setContratosCliente,
+    solicitaCambioContrasena
 };
